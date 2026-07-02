@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0068)file:///Users/sanmartin/Downloads/zenith-onboarding-v2-vendas_1.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZENITH — Onboarding de Clientes</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>ZENITH — Bem-vindo(a)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./ZENITH — Bem-vindo(a)_files/css2" rel="stylesheet">
 <style>
   :root{
     --bg:#FFFFFF;
-    --bg-alt:#F4F5F7;
+    --bg-alt:#F6F7F9;
     --card:#FFFFFF;
     --ink:#0E0E12;
     --ink-soft:#5C5C66;
     --ink-faint:#A2A2AC;
     --blue:#3F31DE;
     --blue-deep:#2B1FAE;
-    --blue-light:#6E63EA;
     --blue-wash:#EFEDFC;
-    --line:rgba(14,14,18,0.11);
+    --blue-num:#D8D4F7;
+    --line:rgba(14,14,18,0.10);
     --line-soft:rgba(14,14,18,0.06);
-    --shadow: 0 30px 70px -34px rgba(14,14,18,0.18);
+    --shadow: 0 24px 60px -30px rgba(14,14,18,0.16);
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
     *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
   }
 
@@ -37,128 +35,115 @@
     font-family:'Inter',sans-serif;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
   }
 
   ::selection{ background:var(--blue); color:#fff; }
   a{ color:inherit; }
 
-  .wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
-
-  /* ---------- NAV ---------- */
   header.nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(255,255,255,0.86);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line-soft);
+    padding:22px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
   }
-  .nav-inner{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:20px 32px; max-width:1120px; margin:0 auto;
-  }
-  .brandmark{ display:flex; align-items:center; gap:11px; }
-  .brandmark .zmark{ display:block; }
-  .brandmark span{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:19px; letter-spacing:0.01em; }
-  .nav-tag{ font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); }
+  .brandmark{ display:flex; align-items:center; gap:10px; }
+  .brandmark span{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:18px; letter-spacing:0.01em; }
+  .nav-tag{ font-family:'Space Mono', monospace; font-size:10.5px; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-faint); }
+
+  main{ flex:1; display:flex; align-items:center; justify-content:center; padding:16px 18px 48px; }
 
   /* ---------- HERO ---------- */
-  .hero{ position:relative; padding:120px 32px 88px; overflow:hidden; }
-  .hero-inner{ max-width:1120px; margin:0 auto; position:relative; z-index:2; }
+  #heroView{ max-width:620px; width:100%; text-align:center; padding:24px 0; }
+  .hero-zwatermark{ width:52px; height:46px; margin:0 auto 30px; opacity:0; animation:riseIn 0.8s cubic-bezier(.2,.8,.2,1) 0.05s forwards; }
   .eyebrow{
-    font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--blue-deep); display:flex; align-items:center; gap:10px; margin-bottom:28px;
-    opacity:0; animation:riseIn 0.9s cubic-bezier(.2,.8,.2,1) 0.1s forwards;
+    font-family:'Space Mono', monospace; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--blue-deep); display:flex; align-items:center; justify-content:center; gap:9px; margin-bottom:20px;
+    opacity:0; animation:riseIn 0.9s cubic-bezier(.2,.8,.2,1) 0.15s forwards;
   }
-  .eyebrow::before{ content:''; width:26px; height:1px; background:var(--blue); }
+  .eyebrow::before, .eyebrow::after{ content:''; width:20px; height:1px; background:var(--blue); }
 
   h1.hero-title{
     font-family:'Space Grotesk', sans-serif; font-weight:600;
-    font-size:clamp(34px, 5.8vw, 64px); line-height:1.1; letter-spacing:-0.015em;
-    max-width:820px; opacity:0; animation:riseIn 1s cubic-bezier(.2,.8,.2,1) 0.25s forwards;
+    font-size:clamp(28px, 6.6vw, 46px); line-height:1.18; letter-spacing:-0.015em;
+    opacity:0; animation:riseIn 1s cubic-bezier(.2,.8,.2,1) 0.28s forwards;
   }
   h1.hero-title .accent{ color:var(--blue); }
 
   .hero-sub{
-    margin-top:24px; font-size:clamp(16px, 2vw, 18.5px); color:var(--ink-soft); max-width:540px; font-weight:400;
-    opacity:0; animation:riseIn 1s cubic-bezier(.2,.8,.2,1) 0.4s forwards;
+    margin-top:18px; font-size:15.5px; color:var(--ink-soft); max-width:460px; margin-left:auto; margin-right:auto;
+    opacity:0; animation:riseIn 1s cubic-bezier(.2,.8,.2,1) 0.42s forwards;
   }
   .hero-actions{
-    margin-top:42px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;
-    opacity:0; animation:riseIn 1s cubic-bezier(.2,.8,.2,1) 0.55s forwards;
+    margin-top:34px; display:flex; flex-direction:column; align-items:center; gap:14px;
+    opacity:0; animation:riseIn 1s cubic-bezier(.2,.8,.2,1) 0.56s forwards;
   }
   .btn-primary{
     font-family:'Inter',sans-serif; font-weight:600; font-size:15px; color:#fff;
     background:var(--ink); border:1px solid var(--ink); padding:16px 30px; border-radius:3px;
-    cursor:pointer; display:inline-flex; align-items:center; gap:10px;
+    cursor:pointer; display:inline-flex; align-items:center; gap:10px; width:100%; max-width:300px; justify-content:center;
     transition:background 0.35s ease, transform 0.35s ease, border-color .35s ease;
   }
   .btn-primary:hover{ background:var(--blue); border-color:var(--blue); transform:translateY(-2px); }
   .btn-primary:focus-visible{ outline:2px solid var(--blue); outline-offset:3px; }
-  .btn-primary svg{ transition:transform 0.35s ease; }
+  .btn-primary svg{ transition:transform 0.35s ease; flex-shrink:0; }
   .btn-primary:hover svg{ transform:translateX(4px); }
+  .hero-meta{ font-family:'Space Mono', monospace; font-size:11.5px; color:var(--ink-faint); }
 
-  .hero-meta{ font-family:'Space Mono', monospace; font-size:12px; color:var(--ink-faint); }
+  @keyframes riseIn{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:translateY(0); } }
 
-  .hero-zwatermark{
-    position:absolute; right:-4%; top:50%; transform:translateY(-50%);
-    width:min(560px, 52vw); opacity:1; z-index:1; pointer-events:none;
-  }
-
-  @keyframes riseIn{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:translateY(0); } }
-
-  /* ---------- INTRO STRIP ---------- */
-  .intro{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--bg-alt); }
-  .intro-inner{
-    max-width:1120px; margin:0 auto; padding:56px 32px;
-    display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:start;
-  }
-  .intro-inner p{ font-size:17px; color:var(--ink-soft); max-width:480px; }
-  .intro-facts{ display:flex; flex-direction:column; gap:18px; }
-  .fact{ display:flex; gap:16px; align-items:baseline; padding-bottom:16px; border-bottom:1px solid var(--line-soft); }
-  .fact:last-child{ border-bottom:none; padding-bottom:0; }
-  .fact .num{ font-family:'Space Mono', monospace; font-size:12px; color:var(--blue); min-width:24px; }
-  .fact .txt{ font-size:14.5px; color:var(--ink); }
-  .fact .txt b{ font-weight:600; }
-  @media (max-width: 760px){ .intro-inner{ grid-template-columns:1fr; gap:32px; } }
-
-  /* ---------- FORM SECTION ---------- */
-  .form-section{ padding:100px 32px 140px; position:relative; }
-  .form-head{ max-width:640px; margin:0 auto 48px; text-align:center; }
-  .form-head .eyebrow{ justify-content:center; opacity:1; animation:none; }
-  .form-head .eyebrow::before{ display:none; }
-  .form-head h2{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:clamp(26px,3.2vw,34px); margin-top:12px; letter-spacing:-0.01em; }
+  /* ---------- FORM VIEW ---------- */
+  #formView{ display:none; width:100%; max-width:600px; }
+  #formView.active{ display:block; animation:fadeIn 0.55s cubic-bezier(.2,.8,.2,1); }
 
   .form-card{
-    max-width:720px; margin:0 auto; background:var(--card); border:1px solid var(--line);
-    border-radius:6px; box-shadow:var(--shadow); padding:52px 56px 44px; position:relative;
+    background:var(--card); border:1px solid var(--line); border-radius:8px;
+    box-shadow:var(--shadow); padding:40px 40px 32px; position:relative; overflow:hidden;
   }
-  @media (max-width:640px){ .form-card{ padding:36px 24px 30px; } }
+  @media (max-width:560px){ .form-card{ padding:28px 20px 24px; border-radius:6px; } }
+  @media (max-width:360px){ .form-card{ padding:22px 14px 20px; } }
 
-  /* progress */
-  .progress-wrap{ margin-bottom:44px; }
-  .progress-top{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; }
-  .progress-label{ font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); }
-  .progress-count{ font-family:'Space Mono', monospace; font-size:13px; color:var(--blue-deep); font-weight:700; }
-  .segments{ display:flex; gap:5px; }
-  .segments .seg{ flex:1; height:4px; background:var(--line); border-radius:2px; overflow:hidden; position:relative; }
+  .progress-wrap{ margin-bottom:6px; }
+  .progress-top{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; }
+  .progress-label{ font-family:'Space Mono', monospace; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); }
+  .progress-count{ font-family:'Space Mono', monospace; font-size:12.5px; color:var(--blue-deep); font-weight:700; }
+  .segments{ display:flex; gap:4px; flex-wrap:wrap; }
+  .segments .seg{ flex:1 1 auto; min-width:14px; height:3px; background:var(--line); border-radius:2px; overflow:hidden; position:relative; }
   .segments .seg::after{
     content:''; position:absolute; inset:0; background:var(--blue);
     transform:scaleX(0); transform-origin:left; transition:transform 0.45s cubic-bezier(.2,.8,.2,1);
   }
   .segments .seg.filled::after{ transform:scaleX(1); }
 
-  /* steps */
-  .step{ display:none; animation:stepIn 0.5s cubic-bezier(.2,.8,.2,1); }
-  .step.active{ display:block; }
-  @keyframes stepIn{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:translateY(0); } }
-  .step-num{ font-family:'Space Mono', monospace; font-size:12px; color:var(--blue); letter-spacing:0.1em; margin-bottom:10px; display:block; }
-  .step h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:22px; margin-bottom:8px; line-height:1.28; letter-spacing:-0.005em; }
-  .step .hint{ font-size:13.5px; color:var(--ink-faint); margin-bottom:22px; }
+  .greeting{ font-size:12.5px; color:var(--ink-faint); margin:16px 0 0; display:none; }
+  .greeting.show{ display:block; }
+  .greeting b{ color:var(--blue-deep); font-weight:600; }
 
-  .field{ margin-bottom:18px; }
-  .field label.small-label{ display:block; font-size:12.5px; font-weight:600; color:var(--ink-soft); margin-bottom:8px; }
+  .step{ display:none; margin-top:8px; animation:fadeIn 0.5s cubic-bezier(.2,.8,.2,1); }
+  .step.active{ display:block; }
+  .step-num-big{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(34px, 10vw, 52px);
+    line-height:1;
+    color:var(--blue-num);
+    margin-top:22px;
+    margin-bottom:2px;
+    user-select:none;
+  }
+  .step h3{
+    font-family:'Space Grotesk', sans-serif; font-weight:600;
+    font-size:clamp(19px, 4.6vw, 25px); margin-bottom:10px; line-height:1.32; letter-spacing:-0.005em;
+  }
+  .step .hint{ font-size:13px; color:var(--ink-faint); margin-bottom:24px; line-height:1.55; }
+
+  .field{ margin-bottom:16px; }
+  .field label.small-label{ display:block; font-size:12px; font-weight:600; color:var(--ink-soft); margin-bottom:7px; }
   input[type=text], textarea{
-    width:100%; border:1px solid var(--line); background:var(--bg-alt); border-radius:3px; padding:14px 16px;
+    width:100%; border:1px solid var(--line); background:var(--bg-alt); border-radius:4px; padding:13px 15px;
     font-family:'Inter',sans-serif; font-size:15px; color:var(--ink);
     transition:border-color 0.25s ease, background 0.25s ease; resize:vertical;
   }
@@ -167,432 +152,327 @@
   input[type=text]:focus, textarea:focus{ outline:none; border-color:var(--blue); background:var(--bg); }
   input[type=text]:focus-visible, textarea:focus-visible{ outline:2px solid var(--blue); outline-offset:1px; }
 
-  /* @ prefix inputs */
   .at-wrap{ position:relative; }
   .at-wrap .at-prefix{
-    position:absolute; left:16px; top:50%; transform:translateY(-50%);
+    position:absolute; left:15px; top:50%; transform:translateY(-50%);
     color:var(--ink-faint); font-size:15px; pointer-events:none;
   }
-  .at-wrap input{ padding-left:29px; }
-  .at-grid{ display:flex; flex-direction:column; gap:12px; }
+  .at-wrap input{ padding-left:28px; }
+  .at-grid{ display:flex; flex-direction:column; gap:10px; }
 
-  .radio-group{ display:flex; flex-direction:column; gap:10px; margin-top:4px; }
+  .subgroup{ margin-bottom:22px; }
+  .subgroup:last-child{ margin-bottom:0; }
+  .subgroup .sub-label{ font-size:13px; font-weight:600; color:var(--ink); margin-bottom:9px; display:block; }
+  .subgroup + .subgroup{ padding-top:20px; border-top:1px solid var(--line-soft); }
+
+  .radio-group{ display:flex; flex-direction:column; gap:8px; margin-top:2px; }
   .radio-option{
-    display:flex; align-items:center; gap:12px; border:1px solid var(--line); border-radius:3px; padding:13px 16px;
-    cursor:pointer; transition:border-color 0.25s ease, background 0.25s ease;
+    display:flex; align-items:center; gap:12px; border:1px solid var(--line); border-radius:4px; padding:12px 15px;
+    cursor:pointer; transition:border-color 0.2s ease, background 0.2s ease;
   }
   .radio-option:hover{ border-color:var(--ink-faint); }
   .radio-option.checked{ border-color:var(--blue); background:var(--blue-wash); }
-  .radio-option input{ accent-color:var(--blue); width:16px; height:16px; }
-  .radio-option span{ font-size:14.5px; }
-
-  .outro-input{ margin-top:10px; display:none; }
-  .outro-input.show{ display:block; }
-
-  .examples-box{
-    margin-top:10px; font-size:12.5px; color:var(--ink-faint);
-    background:var(--bg-alt); border-left:2px solid var(--blue); padding:10px 14px;
-  }
-
-  .subgroup{ margin-bottom:26px; }
-  .subgroup:last-child{ margin-bottom:0; }
-  .subgroup .sub-label{ font-size:14px; font-weight:600; color:var(--ink); margin-bottom:10px; display:block; }
-  .subgroup + .subgroup{ padding-top:24px; border-top:1px solid var(--line-soft); }
+  .radio-option input{ accent-color:var(--blue); width:16px; height:16px; flex-shrink:0; }
+  .radio-option span{ font-size:14px; }
 
   .step-actions{
-    display:flex; justify-content:space-between; align-items:center;
-    margin-top:32px; padding-top:24px; border-top:1px solid var(--line-soft);
+    display:flex; justify-content:space-between; align-items:center; gap:14px;
+    margin-top:28px; padding-top:20px; border-top:1px solid var(--line-soft);
   }
   .btn-ghost{
-    font-family:'Inter',sans-serif; font-size:14px; font-weight:500; color:var(--ink-soft);
+    font-family:'Inter',sans-serif; font-size:13.5px; font-weight:500; color:var(--ink-soft);
     background:none; border:none; cursor:pointer; display:flex; align-items:center; gap:6px;
-    padding:8px 4px; transition:color 0.25s ease;
+    padding:8px 4px; transition:color 0.25s ease; flex-shrink:0;
   }
   .btn-ghost:hover{ color:var(--ink); }
   .btn-ghost:disabled{ opacity:0.3; cursor:default; }
   .btn-ghost:disabled:hover{ color:var(--ink-soft); }
 
   .btn-next{
-    font-family:'Inter',sans-serif; font-weight:600; font-size:14.5px; color:#fff;
-    background:var(--ink); border:none; border-radius:3px; padding:14px 26px;
-    cursor:pointer; display:flex; align-items:center; gap:8px;
-    transition:background 0.3s ease, transform 0.3s ease;
+    font-family:'Inter',sans-serif; font-weight:600; font-size:14px; color:#fff;
+    background:var(--ink); border:none; border-radius:4px; padding:13px 22px;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;
+    transition:background 0.3s ease, transform 0.3s ease; flex:1; max-width:220px;
   }
   .btn-next:hover{ background:var(--blue); transform:translateY(-1px); }
   .btn-next:focus-visible{ outline:2px solid var(--blue); outline-offset:2px; }
-  .btn-next svg{ transition:transform 0.3s ease; }
+  .btn-next svg{ transition:transform 0.3s ease; flex-shrink:0; }
   .btn-next:hover svg{ transform:translateX(3px); }
 
-  .field-error{ font-size:12px; color:var(--blue-deep); margin-top:6px; display:none; }
+  @media (max-width:400px){
+    .step-actions{ flex-direction:column-reverse; align-items:stretch; }
+    .btn-next{ max-width:none; width:100%; }
+    .btn-ghost{ justify-content:center; }
+  }
+
+  .field-error{ font-size:11.5px; color:var(--blue-deep); margin-top:6px; display:none; }
   .field-error.show{ display:block; }
   .field.error input, .field.error textarea{ border-color:var(--blue-deep); }
 
-  /* success */
-  .success{ display:none; text-align:center; animation:stepIn 0.6s cubic-bezier(.2,.8,.2,1); }
+  .success{ display:none; text-align:center; animation:fadeIn 0.6s cubic-bezier(.2,.8,.2,1); }
   .success.active{ display:block; }
-  .success .zmark-lg{ margin:0 auto 22px; width:46px; height:40px; }
-  .success h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:27px; margin-bottom:14px; letter-spacing:-0.01em; }
-  .success > p.lead{ color:var(--ink-soft); font-size:15px; max-width:440px; margin:0 auto 30px; }
-  .checklist{ text-align:left; max-width:380px; margin:0 auto 34px; display:flex; flex-direction:column; gap:14px; }
-  .checklist li{ list-style:none; display:flex; align-items:center; gap:12px; font-size:14.5px; color:var(--ink); }
-  .checklist li svg{ flex-shrink:0; }
-  .success .note{ font-size:13px; color:var(--ink-faint); max-width:420px; margin:0 auto; }
-  .wa-status{ margin-top:22px; font-family:'Space Mono', monospace; font-size:12px; color:var(--blue-deep); }
+  .success .zmark-lg{ margin:22px auto 20px; width:40px; height:35px; }
+  .success h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:clamp(22px,5vw,26px); margin-bottom:12px; letter-spacing:-0.01em; }
+  .success > p.lead{ color:var(--ink-soft); font-size:14.5px; max-width:400px; margin:0 auto 22px; }
+  .success .note{ font-size:12.5px; color:var(--ink-faint); max-width:380px; margin:0 auto; }
+  .wa-status{ margin-top:18px; font-family:'Space Mono', monospace; font-size:11.5px; color:var(--blue-deep); }
   .btn-resend{
-    margin-top:18px; font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:var(--blue-deep);
-    background:none; border:1px solid var(--line); border-radius:3px; padding:11px 20px;
+    margin-top:16px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:var(--blue-deep);
+    background:none; border:1px solid var(--line); border-radius:4px; padding:10px 18px;
     cursor:pointer; transition:border-color .25s ease;
   }
   .btn-resend:hover{ border-color:var(--blue); }
 
-  /* footer */
-  footer{ padding:40px 32px; border-top:1px solid var(--line); }
-  .footer-inner{ max-width:1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
-  .footer-inner .brandmark span{ font-size:15px; }
-  footer .copy{ font-family:'Space Mono', monospace; font-size:11px; color:var(--ink-faint); letter-spacing:0.04em; }
+  footer{ padding:22px 20px; text-align:center; }
+  footer .copy{ font-family:'Space Mono', monospace; font-size:10.5px; color:var(--ink-faint); letter-spacing:0.04em; }
 </style>
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute">
   <symbol id="zmark" viewBox="0 0 210 182">
-    <path d="M22,18 L192,18 L144,58 L22,58 Z"/>
-    <path d="M144,58 L192,58 L192,102 L107,102 Z"/>
-    <path d="M62,118 L192,118 L192,163 L22,163 Z"/>
+    <path d="M22,18 L192,18 L144,58 L22,58 Z"></path>
+    <path d="M144,58 L192,58 L192,102 L107,102 Z"></path>
+    <path d="M62,118 L192,118 L192,163 L22,163 Z"></path>
   </symbol>
 </svg>
 
-<datalist id="segmentosList">
-  <option value="Loja de roupas / moda">
-  <option value="Clínica odontológica">
-  <option value="Clínica estética">
-  <option value="Consultório médico">
-  <option value="Advocacia">
-  <option value="Imobiliária">
-  <option value="Academia / estúdio fitness">
-  <option value="Pet shop / clínica veterinária">
-  <option value="Restaurante / delivery">
-  <option value="Barbearia / salão de beleza">
-  <option value="Contabilidade">
-  <option value="E-commerce">
-  <option value="Curso online / infoproduto">
-  <option value="Arquitetura / design de interiores">
-  <option value="Construção civil / reforma">
-  <option value="Oficina / automotivo">
-  <option value="Nutrição">
-  <option value="Psicologia / terapia">
-  <option value="Joalheria / semijoias">
-  <option value="Educação infantil / escola">
-  <option value="Seguros">
-  <option value="Agência / marketing">
-  <option value="Tecnologia / SaaS">
-  <option value="Turismo / viagens">
-  <option value="Eventos / festas">
-  <option value="Farmácia">
-  <option value="Móveis / decoração">
-  <option value="Fisioterapia">
-  <option value="Óptica">
-  <option value="Serviços financeiros">
-</datalist>
-
 <header class="nav">
-  <div class="nav-inner">
-    <div class="brandmark">
-      <svg class="zmark" width="20" height="18"><use href="#zmark" fill="#0E0E12"/></svg>
-      <span>ZENITH</span>
-    </div>
-    <div class="nav-tag">Onboarding de clientes</div>
+  <div class="brandmark">
+    <svg width="18" height="16"><use href="#zmark" fill="#0E0E12"></use></svg>
+    <span>ZENITH</span>
   </div>
+  <div class="nav-tag">Onboarding</div>
 </header>
 
-<section class="hero">
-  <svg class="hero-zwatermark" viewBox="0 0 210 182">
-    <use href="#zmark" fill="#F4F5F7"/>
-    <use href="#zmark" fill="none" stroke="rgba(14,14,18,0.06)" stroke-width="1"/>
-  </svg>
-
-  <div class="hero-inner">
-    <div class="eyebrow">Onboarding · Novos clientes</div>
-    <h1 class="hero-title">Vamos começar as campanhas com a ZENITH, mas antes precisamos entender <span class="accent">a sua empresa</span>.</h1>
-    <p class="hero-sub">Quanto mais a gente entender sobre a sua empresa, mais certeira é a estratégia. São perguntas rápidas e diretas — leva cerca de 3 minutos.</p>
+<main>
+  <!-- HERO -->
+  <div id="heroView">
+    <svg class="hero-zwatermark" viewBox="0 0 210 182"><use href="#zmark" fill="#3F31DE"></use></svg>
+    <div class="eyebrow">Bem-vindo(a) à ZENITH</div>
+    <h1 class="hero-title">Bora pra cima? Pra vender mais, eu preciso <span class="accent">te conhecer de verdade</span>.</h1>
+    <p class="hero-sub">Perguntas rápidas e diretas pra gente acertar de primeira. Direto pro seu WhatsApp no final.</p>
     <div class="hero-actions">
-      <button class="btn-primary" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'})">
+      <button class="btn-primary" id="btnStart">
         Iniciar onboarding
-        <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </button>
-      <div class="hero-meta">⏱ &nbsp;~3 minutos &nbsp;·&nbsp; 10 perguntas</div>
+      <div class="hero-meta">⏱ &nbsp;~3 minutos &nbsp;·&nbsp; 12 perguntas</div>
     </div>
   </div>
-</section>
 
-<section class="intro">
-  <div class="intro-inner">
-    <p>Essas respostas vão direto para a equipe ZENITH e servem de base para a estratégia, a comunicação e a estrutura dos seus anúncios.</p>
-    <div class="intro-facts">
-      <div class="fact"><span class="num">01</span><span class="txt">Suas respostas <b>chegam direto no WhatsApp</b> da equipe, sem intermediários.</span></div>
-      <div class="fact"><span class="num">02</span><span class="txt">Não existe resposta errada — <b>quanto mais contexto, melhor a estratégia.</b></span></div>
-      <div class="fact"><span class="num">03</span><span class="txt">Ao final, você recebe os <b>próximos passos</b> do projeto.</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="form-section" id="form-section">
-  <div class="form-head">
-    <div class="eyebrow">Formulário de onboarding</div>
-    <h2>Conte pra gente sobre sua empresa</h2>
-  </div>
-
-  <div class="form-card">
-    <form id="zenithForm" novalidate>
-      <div class="progress-wrap">
-        <div class="progress-top">
-          <span class="progress-label">Progresso</span>
-          <span class="progress-count"><span id="stepCurrent">1</span> / 10</span>
-        </div>
-        <div class="segments" id="segments"></div>
-      </div>
-
-      <!-- STEP 1 -->
-      <div class="step active" data-step="1">
-        <span class="step-num">01 — Sobre a empresa</span>
-        <h3>Quem é a sua empresa?</h3>
-        <p class="hint">O básico pra começarmos a conversa certa.</p>
-        <div class="field">
-          <label class="small-label" for="nomeEmpresa">Nome da empresa</label>
-          <input type="text" id="nomeEmpresa" placeholder="Ex.: Estúdio Aurora">
-          <div class="field-error">Preencha o nome da empresa.</div>
-        </div>
-        <div class="field">
-          <label class="small-label" for="segmento">Segmento / nicho</label>
-          <input type="text" id="segmento" list="segmentosList" placeholder="Comece a digitar ou escolha uma opção...">
-          <div class="field-error">Conte qual é o segmento.</div>
-        </div>
-      </div>
-
-      <!-- STEP 2 -->
-      <div class="step" data-step="2">
-        <span class="step-num">02 — Objetivo do tráfego</span>
-        <h3>Qual o seu principal objetivo com o tráfego feito pela ZENITH?</h3>
-        <div class="field">
-          <div class="radio-group" id="objetivoGroup">
-            <label class="radio-option"><input type="radio" name="objetivo" value="Gerar mais vendas"><span>Gerar mais vendas</span></label>
-            <label class="radio-option"><input type="radio" name="objetivo" value="Gerar mais leads"><span>Gerar mais leads</span></label>
-            <label class="radio-option"><input type="radio" name="objetivo" value="Aumentar o faturamento"><span>Aumentar o faturamento</span></label>
-            <label class="radio-option"><input type="radio" name="objetivo" value="Fortalecer a marca"><span>Fortalecer a marca</span></label>
-            <label class="radio-option"><input type="radio" name="objetivo" value="Outro"><span>Outro</span></label>
+  <!-- FORM -->
+  <div id="formView">
+    <div class="form-card">
+      <form id="zenithForm" novalidate="">
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span class="progress-label">Progresso</span>
+            <span class="progress-count"><span id="stepCurrent">1</span> / 12</span>
           </div>
-          <div class="outro-input" id="objetivoOutroWrap">
-            <input type="text" id="objetivoOutro" placeholder="Qual é o objetivo?">
-          </div>
-          <div class="field-error" id="objetivoError">Selecione uma opção.</div>
+          <div class="segments" id="segments"><div class="seg filled"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
         </div>
-      </div>
+        <p class="greeting" id="greeting"></p>
 
-      <!-- STEP 3 -->
-      <div class="step" data-step="3">
-        <span class="step-num">03 — Produto ou serviço</span>
-        <h3>Qual produto ou serviço você mais quer escalar com o tráfego?</h3>
-        <p class="hint">Se tiver preferência por algum — maior ticket, mais margem, mais estoque — pode contar aqui também.</p>
-        <div class="field">
-          <textarea id="produto" placeholder="Descreva o carro-chefe das campanhas..."></textarea>
-          <div class="field-error">Conte qual será o foco.</div>
-        </div>
-      </div>
-
-      <!-- STEP 4 -->
-      <div class="step" data-step="4">
-        <span class="step-num">04 — Cliente ideal</span>
-        <h3>Se você pudesse escolher um cliente ideal hoje, qual seria o perfil dele?</h3>
-        <p class="hint">Idade, região, comportamento, poder de compra — o que vier à cabeça.</p>
-        <div class="field">
-          <textarea id="publico" placeholder="Descreva esse cliente ideal..."></textarea>
-          <div class="field-error">Descreva o público ideal.</div>
-        </div>
-      </div>
-
-      <!-- STEP 5 -->
-      <div class="step" data-step="5">
-        <span class="step-num">05 — Diferenciais</span>
-        <h3>Quais os diferenciais da <span id="companyNameInline">sua empresa</span> em relação aos concorrentes?</h3>
-        <div class="field">
-          <textarea id="diferenciais" placeholder="O que só vocês oferecem?"></textarea>
-          <div class="field-error">Conte seus diferenciais.</div>
-        </div>
-      </div>
-
-      <!-- STEP 6 -->
-      <div class="step" data-step="6">
-        <span class="step-num">06 — Concorrência e referências</span>
-        <h3>Quem está no seu radar?</h3>
-        <div class="subgroup">
-          <span class="sub-label">Você consegue citar 3 concorrentes seus hoje? (só o @ do Instagram já ajuda)</span>
-          <div class="field at-grid">
-            <div class="at-wrap"><span class="at-prefix">@</span><input type="text" id="concorrente1" placeholder="concorrente_1"></div>
-            <div class="at-wrap"><span class="at-prefix">@</span><input type="text" id="concorrente2" placeholder="concorrente_2 (opcional)"></div>
-            <div class="at-wrap"><span class="at-prefix">@</span><input type="text" id="concorrente3" placeholder="concorrente_3 (opcional)"></div>
-            <div class="field-error" id="concorrenteError">Cite pelo menos 1 concorrente.</div>
-          </div>
-        </div>
-        <div class="subgroup">
-          <span class="sub-label">E se eu pedisse 3 empresas que você se inspira, quais seriam? (opcional)</span>
-          <div class="field at-grid">
-            <input type="text" id="inspiracao1" placeholder="Empresa ou @perfil 1">
-            <input type="text" id="inspiracao2" placeholder="Empresa ou @perfil 2">
-            <input type="text" id="inspiracao3" placeholder="Empresa ou @perfil 3">
-          </div>
-        </div>
-      </div>
-
-      <!-- STEP 7 -->
-      <div class="step" data-step="7">
-        <span class="step-num">07 — Oferta</span>
-        <h3>Tem alguma oferta, promoção ou condição especial que você gostaria de destacar?</h3>
-        <p class="hint">Pode ser algo que já existe hoje ou uma ideia para uma futura estratégia.</p>
-        <div class="field">
-          <textarea id="promocoes" placeholder="Descontos, condições, lançamentos, sazonalidade..."></textarea>
-        </div>
-      </div>
-
-      <!-- STEP 8 -->
-      <div class="step" data-step="8">
-        <span class="step-num">08 — Vendas e metas</span>
-        <h3>Como está o negócio hoje — e onde você quer chegar?</h3>
-        <div class="subgroup">
-          <span class="sub-label">Onde a venda acontece hoje?</span>
-          <div class="radio-group" id="canalGroup">
-            <label class="radio-option"><input type="radio" name="canal" value="WhatsApp"><span>WhatsApp</span></label>
-            <label class="radio-option"><input type="radio" name="canal" value="Site / E-commerce"><span>Site / E-commerce</span></label>
-            <label class="radio-option"><input type="radio" name="canal" value="Loja física"><span>Loja física</span></label>
-            <label class="radio-option"><input type="radio" name="canal" value="Marketplace"><span>Marketplace (Shopee, Mercado Livre...)</span></label>
-            <label class="radio-option"><input type="radio" name="canal" value="Redes sociais (DM)"><span>Redes sociais (DM)</span></label>
-            <label class="radio-option"><input type="radio" name="canal" value="Outro"><span>Outro / mais de um canal</span></label>
-          </div>
-          <div class="field-error" id="canalError">Selecione uma opção.</div>
-        </div>
-        <div class="subgroup">
-          <span class="sub-label">Quantos clientes ou vendas vocês fazem, em média, por mês?</span>
-          <div class="radio-group" id="volumeGroup">
-            <label class="radio-option"><input type="radio" name="volume" value="Menos de 10"><span>Menos de 10</span></label>
-            <label class="radio-option"><input type="radio" name="volume" value="10 a 30"><span>10 a 30</span></label>
-            <label class="radio-option"><input type="radio" name="volume" value="30 a 100"><span>30 a 100</span></label>
-            <label class="radio-option"><input type="radio" name="volume" value="100 a 300"><span>100 a 300</span></label>
-            <label class="radio-option"><input type="radio" name="volume" value="Mais de 300"><span>Mais de 300</span></label>
-            <label class="radio-option"><input type="radio" name="volume" value="Prefiro não informar"><span>Prefiro não informar</span></label>
-          </div>
-          <div class="field-error" id="volumeError">Selecione uma faixa.</div>
-        </div>
-        <div class="subgroup">
-          <span class="sub-label">Qual o faturamento médio mensal hoje?</span>
-          <div class="radio-group" id="faturamentoGroup">
-            <label class="radio-option"><input type="radio" name="faturamento" value="Até R$10 mil"><span>Até R$10 mil</span></label>
-            <label class="radio-option"><input type="radio" name="faturamento" value="R$10 mil a R$30 mil"><span>R$10 mil a R$30 mil</span></label>
-            <label class="radio-option"><input type="radio" name="faturamento" value="R$30 mil a R$100 mil"><span>R$30 mil a R$100 mil</span></label>
-            <label class="radio-option"><input type="radio" name="faturamento" value="R$100 mil a R$300 mil"><span>R$100 mil a R$300 mil</span></label>
-            <label class="radio-option"><input type="radio" name="faturamento" value="Acima de R$300 mil"><span>Acima de R$300 mil</span></label>
-            <label class="radio-option"><input type="radio" name="faturamento" value="Prefiro não informar"><span>Prefiro não informar</span></label>
-          </div>
-          <div class="field-error" id="faturamentoError">Selecione uma faixa.</div>
-        </div>
-        <div class="subgroup">
-          <span class="sub-label">Qual aumento em vendas ou faturamento você gostaria de alcançar com o tráfego?</span>
-          <div class="radio-group" id="metaGroup">
-            <label class="radio-option"><input type="radio" name="meta" value="Até 20%"><span>Até 20%</span></label>
-            <label class="radio-option"><input type="radio" name="meta" value="20% a 50%"><span>20% a 50%</span></label>
-            <label class="radio-option"><input type="radio" name="meta" value="50% a 100%"><span>50% a 100%</span></label>
-            <label class="radio-option"><input type="radio" name="meta" value="Mais de 100%"><span>Mais de 100%</span></label>
-            <label class="radio-option"><input type="radio" name="meta" value="Ainda não sei, quero entender o potencial"><span>Ainda não sei, quero entender o potencial</span></label>
-          </div>
-          <div class="field-error" id="metaError">Selecione uma opção.</div>
-        </div>
-      </div>
-
-      <!-- STEP 9 -->
-      <div class="step" data-step="9">
-        <span class="step-num">09 — Restrições e observações</span>
-        <h3>Mais dois pontos antes de fecharmos.</h3>
-        <div class="subgroup">
-          <span class="sub-label">Existe algo que NÃO devemos usar na comunicação?</span>
+        <!-- STEP 1 -->
+        <div class="step active" data-step="1">
+          <span class="step-num-big">01</span>
+          <h3>Qual é o seu nome?</h3>
           <div class="field">
-            <textarea id="restricoes" placeholder="O que devemos evitar?"></textarea>
-            <div class="examples-box">Exemplos: preços específicos, determinadas palavras, cores, serviços ou produtos que não devem aparecer.</div>
+            <input type="text" id="nomePessoa" placeholder="Ex.: Julia">
+            <div class="field-error">Como podemos te chamar?</div>
           </div>
         </div>
-        <div class="subgroup">
-          <span class="sub-label">Algo mais que devemos saber antes de começar? (opcional)</span>
+
+        <!-- STEP 2 -->
+        <div class="step" data-step="2">
+          <span class="step-num-big">02</span>
+          <h3>Qual o @ do Instagram da empresa?</h3>
+          <div class="field at-wrap">
+            <span class="at-prefix">@</span>
+            <input type="text" id="instaEmpresa" placeholder="suaempresa">
+            <div class="field-error">Informe o @ da empresa.</div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step" data-step="3">
+          <span class="step-num-big">03</span>
+          <h3>Qual o principal canal de vendas hoje?</h3>
           <div class="field">
-            <textarea id="extra" placeholder="Fique à vontade..."></textarea>
+            <div class="radio-group" id="canalGroup">
+              <label class="radio-option"><input type="radio" name="canal" value="Instagram"><span>Instagram</span></label>
+              <label class="radio-option"><input type="radio" name="canal" value="WhatsApp"><span>WhatsApp</span></label>
+              <label class="radio-option"><input type="radio" name="canal" value="Direct"><span>Direct</span></label>
+              <label class="radio-option"><input type="radio" name="canal" value="Facebook"><span>Facebook</span></label>
+              <label class="radio-option"><input type="radio" name="canal" value="Google"><span>Google</span></label>
+              <label class="radio-option"><input type="radio" name="canal" value="TikTok"><span>TikTok</span></label>
+              <label class="radio-option"><input type="radio" name="canal" value="Outro"><span>Outro</span></label>
+            </div>
+            <div class="field-error" id="canalError">Selecione uma opção.</div>
           </div>
         </div>
-      </div>
 
-      <!-- STEP 10 -->
-      <div class="step" data-step="10">
-        <span class="step-num">10 — Contato principal</span>
-        <h3>Quem será o responsável pelo contato com a ZENITH?</h3>
-        <div class="field">
-          <label class="small-label" for="contatoNome">Nome</label>
-          <input type="text" id="contatoNome" placeholder="Nome completo">
-          <div class="field-error">Informe o nome do responsável.</div>
+        <!-- STEP 4 (NOVA) -->
+        <div class="step" data-step="4">
+          <span class="step-num-big">04</span>
+          <h3>Quando alguém manda mensagem no WhatsApp, como funciona o atendimento?</h3>
+          <p class="hint">Quem responde, em quanto tempo, e o que normalmente acontece até fechar a venda.</p>
+          <div class="field">
+            <textarea id="atendimentoWhats" placeholder="Descreva como é esse atendimento hoje..."></textarea>
+            <div class="field-error">Conte como funciona esse atendimento.</div>
+          </div>
         </div>
-        <div class="field">
-          <label class="small-label" for="contatoWhats">WhatsApp</label>
-          <input type="text" id="contatoWhats" placeholder="(00) 00000-0000">
-          <div class="field-error">Informe um WhatsApp para contato.</div>
+
+        <!-- STEP 5 (NOVA) -->
+        <div class="step" data-step="5">
+          <span class="step-num-big">05</span>
+          <h3>O atendimento é feito só por você ou vocês já têm um time de vendas?</h3>
+          <div class="field">
+            <div class="radio-group" id="timeVendasGroup">
+              <label class="radio-option"><input type="radio" name="timeVendas" value="Só eu atendo"><span>Só eu atendo</span></label>
+              <label class="radio-option"><input type="radio" name="timeVendas" value="Tenho equipe de vendas"><span>Tenho equipe de vendas</span></label>
+            </div>
+            <div class="field-error" id="timeVendasError">Selecione uma opção.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="step-actions" id="stepActions">
-        <button type="button" class="btn-ghost" id="btnBack" disabled>
-          <svg width="14" height="10" viewBox="0 0 16 10" fill="none"><path d="M15 5H1M1 5L5 1M1 5L5 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Voltar
-        </button>
-        <button type="button" class="btn-next" id="btnNext">
-          Avançar
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </form>
+        <!-- STEP 6 (NOVA) -->
+        <div class="step" data-step="6">
+          <span class="step-num-big">06</span>
+          <h3>Qual a maior dificuldade hoje no atendimento ou na hora de fechar uma venda?</h3>
+          <div class="field">
+            <textarea id="dificuldadeAtendimento" placeholder="Pode ser demora, objeção de preço, falta de follow-up..."></textarea>
+            <div class="field-error">Conte qual é essa dificuldade.</div>
+          </div>
+        </div>
 
-    <div class="success" id="successScreen">
-      <svg class="zmark-lg" viewBox="0 0 210 182"><use href="#zmark" fill="#3F31DE"/></svg>
-      <h3>Recebemos suas informações.</h3>
-      <p class="lead">Agora nossa equipe vai iniciar a estruturação do seu projeto. Estes são os próximos passos:</p>
-      <ul class="checklist">
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.3" stroke="#3F31DE" stroke-width="1.2"/><path d="M5 8.2L7.1 10.3L11.2 5.8" stroke="#3F31DE" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Organização da estratégia</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.3" stroke="#3F31DE" stroke-width="1.2"/><path d="M5 8.2L7.1 10.3L11.2 5.8" stroke="#3F31DE" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Configuração das plataformas</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.3" stroke="#3F31DE" stroke-width="1.2"/><path d="M5 8.2L7.1 10.3L11.2 5.8" stroke="#3F31DE" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Desenvolvimento das campanhas</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.3" stroke="#3F31DE" stroke-width="1.2"/><path d="M5 8.2L7.1 10.3L11.2 5.8" stroke="#3F31DE" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Aprovação dos materiais, quando necessário</li>
-      </ul>
-      <p class="note">Vamos manter contato pelo WhatsApp durante todo o processo. Seja bem-vindo(a) à ZENITH — vamos construir grandes resultados juntos.</p>
-      <div class="wa-status" id="waStatus">Abrindo o WhatsApp…</div>
-      <div><button type="button" class="btn-resend" id="btnResend">Não abriu? Enviar novamente</button></div>
+        <!-- STEP 7 -->
+        <div class="step" data-step="7">
+          <span class="step-num-big">07</span>
+          <h3>Quantos clientes novos você recebe por mês, em média?</h3>
+          <div class="field">
+            <input type="text" id="clientesMes" inputmode="numeric" placeholder="Ex.: 25">
+            <div class="field-error">Informe um número aproximado.</div>
+          </div>
+        </div>
+
+        <!-- STEP 8 -->
+        <div class="step" data-step="8">
+          <span class="step-num-big">08</span>
+          <h3>Qual o faturamento mensal hoje?</h3>
+          <div class="field">
+            <div class="radio-group" id="faturamentoGroup">
+              <label class="radio-option"><input type="radio" name="faturamento" value="Até R$10 mil"><span>Até R$10 mil</span></label>
+              <label class="radio-option"><input type="radio" name="faturamento" value="R$10 mil a R$30 mil"><span>R$10 mil a R$30 mil</span></label>
+              <label class="radio-option"><input type="radio" name="faturamento" value="R$30 mil a R$100 mil"><span>R$30 mil a R$100 mil</span></label>
+              <label class="radio-option"><input type="radio" name="faturamento" value="R$100 mil a R$300 mil"><span>R$100 mil a R$300 mil</span></label>
+              <label class="radio-option"><input type="radio" name="faturamento" value="Acima de R$300 mil"><span>Acima de R$300 mil</span></label>
+              <label class="radio-option"><input type="radio" name="faturamento" value="Prefiro não informar"><span>Prefiro não informar</span></label>
+            </div>
+            <div class="field-error" id="faturamentoError">Selecione uma faixa.</div>
+          </div>
+        </div>
+
+        <!-- STEP 9 -->
+        <div class="step" data-step="9">
+          <span class="step-num-big">09</span>
+          <h3>Qual produto ou serviço mais vende hoje?</h3>
+          <div class="field">
+            <input type="text" id="produtoMaisVende" placeholder="Ex.: Consultoria X, Produto Y">
+            <div class="field-error">Conte qual é.</div>
+          </div>
+        </div>
+
+        <!-- STEP 10 -->
+        <div class="step" data-step="10">
+          <span class="step-num-big">10</span>
+          <h3>Se em 90 dias a ZENITH entregasse um resultado que te fizesse pensar "foi a melhor decisão que tomei", qual seria esse resultado?</h3>
+          <div class="field">
+            <textarea id="resultadoSonho" placeholder="Seja bem específico: números, sensação, o que muda no seu dia a dia..."></textarea>
+            <div class="field-error">Conte qual seria esse resultado.</div>
+          </div>
+        </div>
+
+        <!-- STEP 11 -->
+        <div class="step" data-step="11">
+          <span class="step-num-big">11</span>
+          <h3>Concorrentes e referências</h3>
+          <p class="hint">Só o @ do Instagram já ajuda bastante.</p>
+          <div class="subgroup">
+            <span class="sub-label">2 concorrentes</span>
+            <div class="field at-grid">
+              <div class="at-wrap"><span class="at-prefix">@</span><input type="text" id="concorrente1" placeholder="concorrente_1"></div>
+              <div class="at-wrap"><span class="at-prefix">@</span><input type="text" id="concorrente2" placeholder="concorrente_2 (opcional)"></div>
+              <div class="field-error" id="concorrenteError">Informe pelo menos 1 concorrente.</div>
+            </div>
+          </div>
+          <div class="subgroup">
+            <span class="sub-label">2 referências que você admira</span>
+            <div class="field at-grid">
+              <div class="at-wrap"><span class="at-prefix">@</span><input type="text" id="referencia1" placeholder="referencia_1"></div>
+              <div class="at-wrap"><span class="at-prefix">@</span><input type="text" id="referencia2" placeholder="referencia_2 (opcional)"></div>
+              <div class="field-error" id="referenciaError">Informe pelo menos 1 referência.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 12 -->
+        <div class="step" data-step="12">
+          <span class="step-num-big">12</span>
+          <h3>O que é mais fácil pra vocês produzirem?</h3>
+          <div class="field">
+            <div class="radio-group" id="producaoGroup">
+              <label class="radio-option"><input type="radio" name="producao" value="Vídeo"><span>Vídeo</span></label>
+              <label class="radio-option"><input type="radio" name="producao" value="Imagem"><span>Imagem</span></label>
+              <label class="radio-option"><input type="radio" name="producao" value="Ambos"><span>Ambos</span></label>
+            </div>
+            <div class="field-error" id="producaoError">Selecione uma opção.</div>
+          </div>
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn-ghost" id="btnBack" disabled="">
+            <svg width="14" height="10" viewBox="0 0 16 10" fill="none"><path d="M15 5H1M1 5L5 1M1 5L5 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            Voltar
+          </button>
+          <button type="button" class="btn-next" id="btnNext">Avançar <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        </div>
+      </form>
+
+      <div class="success" id="successScreen">
+        <svg class="zmark-lg" viewBox="0 0 210 182"><use href="#zmark" fill="#3F31DE"></use></svg>
+        <h3 id="successTitle">Valeu!</h3>
+        <p class="lead">Recebemos tudo. Agora é começar a estruturar a sua conta: organização da estratégia, configuração das plataformas e produção das primeiras campanhas.</p>
+        <p class="note">Vamos falar com você pelo WhatsApp durante todo o processo. Seja muito bem-vindo(a) à ZENITH. Bora construir algo grande. 🔥</p>
+        <div class="wa-status" id="waStatus">Abrindo o WhatsApp…</div>
+        <div><button type="button" class="btn-resend" id="btnResend">Não abriu? Enviar novamente</button></div>
+      </div>
     </div>
   </div>
-</section>
+</main>
 
 <footer>
-  <div class="footer-inner">
-    <div class="brandmark">
-      <svg class="zmark" width="16" height="14"><use href="#zmark" fill="#0E0E12"/></svg>
-      <span>ZENITH</span>
-    </div>
-    <div class="copy">ZENITH © 2026 — ONBOARDING DE CLIENTES</div>
-  </div>
+  <div class="copy">ZENITH © 2026 · ONBOARDING DE CLIENTES</div>
 </footer>
 
 <script>
 (function(){
   const WHATSAPP_NUMBER = "5555999172933";
-  const totalSteps = 10;
+  const totalSteps = 12;
   let current = 1;
+
+  const heroView = document.getElementById('heroView');
+  const formView = document.getElementById('formView');
+  const btnStart = document.getElementById('btnStart');
 
   const stepsEls = Array.from(document.querySelectorAll('.step'));
   const btnNext = document.getElementById('btnNext');
   const btnBack = document.getElementById('btnBack');
   const stepCurrentEl = document.getElementById('stepCurrent');
   const segmentsWrap = document.getElementById('segments');
-  const companyNameInline = document.getElementById('companyNameInline');
-  const nomeEmpresaInput = document.getElementById('nomeEmpresa');
+  const greeting = document.getElementById('greeting');
+  const nomePessoaInput = document.getElementById('nomePessoa');
 
   for(let i=0;i<totalSteps;i++){
     const seg = document.createElement('div');
@@ -601,10 +481,12 @@
   }
   const segEls = Array.from(segmentsWrap.children);
 
-  function updateProgress(){
-    segEls.forEach((seg,i)=>{ seg.classList.toggle('filled', i < current); });
-    stepCurrentEl.textContent = current;
-  }
+  btnStart.addEventListener('click', ()=>{
+    heroView.style.display = 'none';
+    formView.classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+    setTimeout(()=>{ nomePessoaInput.focus(); }, 300);
+  });
 
   function bindRadioHighlight(groupId){
     const group = document.getElementById(groupId);
@@ -615,14 +497,18 @@
       });
     });
   }
-  ['objetivoGroup','canalGroup','volumeGroup','faturamentoGroup','metaGroup'].forEach(bindRadioHighlight);
+  ['canalGroup','timeVendasGroup','faturamentoGroup','producaoGroup'].forEach(bindRadioHighlight);
 
-  const objetivoGroup = document.getElementById('objetivoGroup');
-  const objetivoOutroWrap = document.getElementById('objetivoOutroWrap');
-  objetivoGroup.addEventListener('change', ()=>{
-    const val = objetivoGroup.querySelector('input:checked')?.value;
-    objetivoOutroWrap.classList.toggle('show', val === 'Outro');
-  });
+  function updateProgress(){
+    segEls.forEach((seg,i)=>{ seg.classList.toggle('filled', i < current); });
+    stepCurrentEl.textContent = current;
+  }
+
+  function firstName(){
+    const n = nomePessoaInput.value.trim();
+    if(!n) return '';
+    return n.split(' ')[0];
+  }
 
   function showStep(n){
     stepsEls.forEach(el=>{
@@ -632,9 +518,14 @@
     btnNext.innerHTML = (n === totalSteps)
       ? 'Enviar para o WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 4L3 11L10 13L13 20L20 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>'
       : 'Avançar <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    if(n === 5){
-      const nome = nomeEmpresaInput.value.trim();
-      companyNameInline.textContent = nome ? nome : 'sua empresa';
+
+    const nome = firstName();
+    if(n > 1 && nome){
+      const restantes = totalSteps - n + 1;
+      greeting.innerHTML = `Valeu, <b>${nome}</b>! Faltam ${restantes} ${restantes === 1 ? 'pergunta' : 'perguntas'}.`;
+      greeting.classList.add('show');
+    } else {
+      greeting.classList.remove('show');
     }
     updateProgress();
   }
@@ -644,7 +535,6 @@
     const err = fieldWrap.querySelector('.field-error');
     if(err) err.classList.toggle('show', show);
   }
-
   function setGroupError(errEl, show){
     if(!errEl) return;
     errEl.classList.toggle('show', show);
@@ -653,52 +543,73 @@
   function validateStep(n){
     let ok = true;
     if(n === 1){
-      const nome = document.getElementById('nomeEmpresa');
-      const seg = document.getElementById('segmento');
-      const nomeOk = nome.value.trim().length > 0;
-      const segOk = seg.value.trim().length > 0;
-      setError(nome.closest('.field'), !nomeOk);
-      setError(seg.closest('.field'), !segOk);
-      ok = nomeOk && segOk;
+      const el = document.getElementById('nomePessoa');
+      const okV = el.value.trim().length > 0;
+      setError(el.closest('.field'), !okV);
+      ok = okV;
     }
     if(n === 2){
-      const checked = objetivoGroup.querySelector('input:checked');
-      const errEl = document.getElementById('objetivoError');
-      if(!checked){ errEl.classList.add('show'); ok = false; } else { errEl.classList.remove('show'); }
+      const el = document.getElementById('instaEmpresa');
+      const okV = el.value.trim().length > 0;
+      setError(el.closest('.field'), !okV);
+      ok = okV;
     }
-    if([3,4,5].includes(n)){
-      const idMap = {3:'produto',4:'publico',5:'diferenciais'};
-      const el = document.getElementById(idMap[n]);
-      const valOk = el.value.trim().length > 0;
-      setError(el.closest('.field'), !valOk);
-      ok = valOk;
+    if(n === 3){
+      const checked = document.getElementById('canalGroup').querySelector('input:checked');
+      setGroupError(document.getElementById('canalError'), !checked);
+      ok = !!checked;
+    }
+    if(n === 4){
+      const el = document.getElementById('atendimentoWhats');
+      const okV = el.value.trim().length > 0;
+      setError(el.closest('.field'), !okV);
+      ok = okV;
+    }
+    if(n === 5){
+      const checked = document.getElementById('timeVendasGroup').querySelector('input:checked');
+      setGroupError(document.getElementById('timeVendasError'), !checked);
+      ok = !!checked;
     }
     if(n === 6){
-      const c1 = document.getElementById('concorrente1');
-      const okC = c1.value.trim().length > 0;
-      const errEl = document.getElementById('concorrenteError');
-      setGroupError(errEl, !okC);
-      ok = okC;
+      const el = document.getElementById('dificuldadeAtendimento');
+      const okV = el.value.trim().length > 0;
+      setError(el.closest('.field'), !okV);
+      ok = okV;
+    }
+    if(n === 7){
+      const el = document.getElementById('clientesMes');
+      const okV = el.value.trim().length > 0;
+      setError(el.closest('.field'), !okV);
+      ok = okV;
     }
     if(n === 8){
-      const canalChecked = document.getElementById('canalGroup').querySelector('input:checked');
-      const volChecked = document.getElementById('volumeGroup').querySelector('input:checked');
-      const fatChecked = document.getElementById('faturamentoGroup').querySelector('input:checked');
-      const metaChecked = document.getElementById('metaGroup').querySelector('input:checked');
-      setGroupError(document.getElementById('canalError'), !canalChecked);
-      setGroupError(document.getElementById('volumeError'), !volChecked);
-      setGroupError(document.getElementById('faturamentoError'), !fatChecked);
-      setGroupError(document.getElementById('metaError'), !metaChecked);
-      ok = !!canalChecked && !!volChecked && !!fatChecked && !!metaChecked;
+      const checked = document.getElementById('faturamentoGroup').querySelector('input:checked');
+      setGroupError(document.getElementById('faturamentoError'), !checked);
+      ok = !!checked;
+    }
+    if(n === 9){
+      const el = document.getElementById('produtoMaisVende');
+      const okV = el.value.trim().length > 0;
+      setError(el.closest('.field'), !okV);
+      ok = okV;
     }
     if(n === 10){
-      const nome = document.getElementById('contatoNome');
-      const whats = document.getElementById('contatoWhats');
-      const nomeOk = nome.value.trim().length > 0;
-      const whatsOk = whats.value.trim().length > 3;
-      setError(nome.closest('.field'), !nomeOk);
-      setError(whats.closest('.field'), !whatsOk);
-      ok = nomeOk && whatsOk;
+      const el = document.getElementById('resultadoSonho');
+      const okV = el.value.trim().length > 0;
+      setError(el.closest('.field'), !okV);
+      ok = okV;
+    }
+    if(n === 11){
+      const c1 = document.getElementById('concorrente1').value.trim().length > 0;
+      const r1 = document.getElementById('referencia1').value.trim().length > 0;
+      setGroupError(document.getElementById('concorrenteError'), !c1);
+      setGroupError(document.getElementById('referenciaError'), !r1);
+      ok = c1 && r1;
+    }
+    if(n === 12){
+      const checked = document.getElementById('producaoGroup').querySelector('input:checked');
+      setGroupError(document.getElementById('producaoError'), !checked);
+      ok = !!checked;
     }
     return ok;
   }
@@ -708,7 +619,7 @@
     if(current < totalSteps){
       current++;
       showStep(current);
-      document.querySelector('.form-card').scrollIntoView({behavior:'smooth', block:'center'});
+      document.querySelector('.form-card').scrollIntoView({behavior:'smooth', block:'start'});
     } else {
       submitForm();
     }
@@ -724,56 +635,48 @@
   function val(id){ return document.getElementById(id).value.trim(); }
 
   function buildMessage(){
-    const objetivoChecked = objetivoGroup.querySelector('input:checked');
-    let objetivo = objetivoChecked ? objetivoChecked.value : '';
-    if(objetivo === 'Outro'){ objetivo = val('objetivoOutro') || 'Outro'; }
+    const canal = document.getElementById('canalGroup').querySelector('input:checked')?.value || 'Não informado';
+    const timeVendas = document.getElementById('timeVendasGroup').querySelector('input:checked')?.value || 'Não informado';
+    const faturamento = document.getElementById('faturamentoGroup').querySelector('input:checked')?.value || 'Não informado';
+    const producao = document.getElementById('producaoGroup').querySelector('input:checked')?.value || 'Não informado';
 
-    const concorrentes = [val('concorrente1'), val('concorrente2'), val('concorrente3')]
+    const concorrentes = [val('concorrente1'), val('concorrente2')]
+      .filter(Boolean).map(c => c.startsWith('@') ? c : '@'+c).join(', ') || 'Não informado';
+    const referencias = [val('referencia1'), val('referencia2')]
       .filter(Boolean).map(c => c.startsWith('@') ? c : '@'+c).join(', ') || 'Não informado';
 
-    const inspiracoes = [val('inspiracao1'), val('inspiracao2'), val('inspiracao3')]
-      .filter(Boolean).join(', ') || 'Não informado';
-
-    const canal = document.getElementById('canalGroup').querySelector('input:checked')?.value || 'Não informado';
-    const volume = document.getElementById('volumeGroup').querySelector('input:checked')?.value || 'Não informado';
-    const faturamento = document.getElementById('faturamentoGroup').querySelector('input:checked')?.value || 'Não informado';
-    const meta = document.getElementById('metaGroup').querySelector('input:checked')?.value || 'Não informado';
+    const insta = val('instaEmpresa');
+    const instaFormatado = insta.startsWith('@') ? insta : '@'+insta;
 
     const lines = [
-      '*Novo Onboarding — ZENITH*',
+      '*Novo cliente · Onboarding ZENITH*',
       '',
-      `*Empresa:* ${val('nomeEmpresa')}`,
-      `*Segmento:* ${val('segmento')}`,
+      `*Nome:* ${val('nomePessoa')}`,
+      `*Instagram da empresa:* ${instaFormatado}`,
       '',
-      `*Objetivo principal:* ${objetivo}`,
+      `*Principal canal de vendas:* ${canal}`,
       '',
-      `*Produto/serviço a escalar:*`,
-      val('produto'),
+      `*Como funciona o atendimento no WhatsApp:*`,
+      val('atendimentoWhats'),
       '',
-      `*Cliente ideal:*`,
-      val('publico'),
+      `*Time de vendas:* ${timeVendas}`,
       '',
-      `*Diferenciais:*`,
-      val('diferenciais'),
+      `*Maior dificuldade no atendimento/fechamento:*`,
+      val('dificuldadeAtendimento'),
+      '',
+      `*Clientes novos por mês:* ${val('clientesMes')}`,
+      `*Faturamento mensal:* ${faturamento}`,
+      '',
+      `*Produto/serviço que mais vende:*`,
+      val('produtoMaisVende'),
+      '',
+      `*Resultado dos sonhos em 90 dias:*`,
+      val('resultadoSonho'),
       '',
       `*Concorrentes:* ${concorrentes}`,
-      `*Inspirações:* ${inspiracoes}`,
+      `*Referências:* ${referencias}`,
       '',
-      `*Oferta/promoção a destacar:*`,
-      val('promocoes') || 'Não informado',
-      '',
-      `*Onde a venda acontece hoje:* ${canal}`,
-      `*Volume de vendas/clientes por mês hoje:* ${volume}`,
-      `*Faturamento médio mensal hoje:* ${faturamento}`,
-      `*Meta de crescimento com o tráfego:* ${meta}`,
-      '',
-      `*Restrições (não usar):*`,
-      val('restricoes') || 'Nenhuma restrição informada',
-      '',
-      `*Outras informações:*`,
-      val('extra') || 'Nenhuma',
-      '',
-      `*Contato responsável:* ${val('contatoNome')} — ${val('contatoWhats')}`
+      `*Facilidade de produção:* ${producao}`
     ];
     return lines.join('\n');
   }
@@ -786,8 +689,10 @@
 
   function submitForm(){
     document.getElementById('zenithForm').style.display = 'none';
+    greeting.classList.remove('show');
+    const nome = firstName();
+    document.getElementById('successTitle').textContent = nome ? `Valeu, ${nome}!` : 'Valeu!';
     document.getElementById('successScreen').classList.add('active');
-    document.getElementById('successScreen').scrollIntoView({behavior:'smooth', block:'center'});
     setTimeout(openWhatsApp, 500);
   }
 
@@ -797,5 +702,6 @@
 })();
 </script>
 
-</body>
-</html>
+
+
+</body></html>
